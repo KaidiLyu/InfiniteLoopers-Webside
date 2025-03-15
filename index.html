@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfiniteLoopers - AI-Powered Nutritional Search App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-icons@0.284.0/font/lucide.min.css">
+</head>
+<body class="dark">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <span class="gradient-text">InfiniteLoopers</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="desktop-nav">
+          <button class="nav-link" data-scroll-to="features">
+            <span class="nav-text" data-i18n="features">Features</span>
+          </button>
+          <button class="nav-link" data-scroll-to="how-it-works">
+            <span class="nav-text" data-i18n="howItWorks">How It Works</span>
+          </button>
+          <button class="nav-link" data-scroll-to="team">
+            <span class="nav-text" data-i18n="team">Team</span>
+          </button>
+        </div>
+
+        <div class="nav-actions">
+          <button class="btn-language">
+            <i class="lucide lucide-globe"></i>
+            <span class="language-indicator">EN</span>
+          </button>
+
+          <button class="btn btn-outline" id="loginBtn" data-i18n="login">Login</button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-btn">
+          <button class="btn-language-mobile">
+            <i class="lucide lucide-globe"></i>
+          </button>
+          <button class="menu-toggle">
+            <i class="lucide lucide-menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-content">
+        <button class="nav-link-mobile" data-scroll-to="features">
+          <span data-i18n="features">Features</span>
+        </button>
+        <button class="nav-link-mobile" data-scroll-to="how-it-works">
+          <span data-i18n="howItWorks">How It Works</span>
+        </button>
+        <button class="nav-link-mobile" data-scroll-to="team">
+          <span data-i18n="team">Team</span>
+        </button>
+        <button class="btn btn-outline" id="loginBtnMobile" data-i18n="login">Login</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-glow"></div>
+      </div>
+
+      <div class="hero-content">
+        <h1 class="hero-title gradient-text" data-i18n="heroTitle">AI-Powered Nutritional Search</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">Discover the nutritional content of any food with just a photo or text search, powered by advanced AI.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" id="downloadBtn" data-i18n="downloadNow">Download Now</button>
+          <a href="learn-more.html" class="btn btn-secondary" data-i18n="learnMore">Learn More</a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <button class="btn-scroll" data-scroll-to="features">
+          <i class="lucide lucide-chevron-down"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <h2 class="section-title gradient-text" data-i18n="featuresTitle">Key Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon cyan">
+              <i class="lucide lucide-camera"></i>
+            </div>
+            <h3 class="feature-title" data-i18n="feature1Title">Image Recognition</h3>
+            <p class="feature-description" data-i18n="feature1Description">Take a photo of any food and get instant nutritional information.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon emerald">
+              <i class="lucide lucide-search"></i>
+            </div>
+            <h3 class="feature-title" data-i18n="feature2Title">Natural Language Search</h3>
+            <p class="feature-description" data-i18n="feature2Description">Simply describe the food you're looking for in natural language.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon blue">
+              <i class="lucide lucide-database"></i>
+            </div>
+            <h3 class="feature-title" data-i18n="feature3Title">Comprehensive Data</h3>
+            <p class="feature-description" data-i18n="feature3Description">Get detailed nutritional breakdown including calories, macros, vitamins, and more.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section" id="video">
+      <div class="container">
+        <h2 class="section-title gradient-text" data-i18n="videoTitle">See It In Action</h2>
+        <p class="section-subtitle" data-i18n="videoSubtitle">Watch how our app works in real time</p>
+        <div class="video-container">
+          <div class="video-wrapper">
+            <video id="demoVideo" poster="https://placehold.co/800x450/000000/FFFFFF/png" muted playsinline loop>
+              <source src="#" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay">
+              <button class="video-play-btn">
+                <i class="lucide lucide-play"></i>
+              </button>
+            </div>
+          </div>
+          <div class="video-info">
+            <h3 class="video-info-title">InfiniteLoopers App Demo</h3>
+            <p class="video-info-description">Watch our app in action as it identifies food and provides detailed nutritional information.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <h2 class="section-title gradient-text" data-i18n="howItWorksTitle">How It Works</h2>
+        <div class="steps-container">
+          <div class="step">
+            <div class="step-number cyan">1</div>
+            <h3 class="step-title" data-i18n="step1">Take a photo or enter a description</h3>
+            <p class="step-description">Take a photo of your food or simply type a description of what you want to search for.</p>
+            <div class="step-icon">
+              <i class="lucide lucide-camera"></i>
+            </div>
+          </div>
+          <div class="step step-right">
+            <div class="step-number emerald">2</div>
+            <h3 class="step-title" data-i18n="step2">Our AI analyzes the content</h3>
+            <p class="step-description">Our powerful AI engine recognizes food items and processes your request in seconds.</p>
+            <div class="step-icon">
+              <i class="lucide lucide-cpu"></i>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number blue">3</div>
+            <h3 class="step-title" data-i18n="step3">Get detailed nutritional information</h3>
+            <p class="step-description">View comprehensive nutritional information including calories, macros, vitamins, and minerals.</p>
+            <div class="step-icon">
+              <i class="lucide lucide-database"></i>
+            </div>
+          </div>
+          <div class="step step-right">
+            <div class="step-number purple">4</div>
+            <h3 class="step-title" data-i18n="step4">Make informed dietary choices</h3>
+            <p class="step-description">Use the information to track your diet, make healthier choices, and achieve your nutrition goals.</p>
+            <div class="step-icon">
+              <i class="lucide lucide-check-circle"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+      <div class="container">
+        <h2 class="section-title gradient-text" data-i18n="teamTitle">Meet Our Team</h2>
+        <p class="section-subtitle" data-i18n="teamDescription">The brilliant minds behind InfiniteLoopers</p>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar">
+              <img src="https://placehold.co/100x100/333333/FFFFFF/png" alt="Kaidi Lyu">
+            </div>
+            <h3 class="team-name">Kaidi Lyu</h3>
+            <p class="team-role">Team Lead</p>
+            <p class="team-email">klyu@email.sc.edu</p>
+            <div class="team-social">
+              <a href="#" class="social-link">
+                <i class="lucide lucide-github"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="lucide lucide-linkedin"></i>
+              </a>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">
+              <img src="https://placehold.co/100x100/333333/FFFFFF/png" alt="Yingdong Feng">
+            </div>
+            <h3 class="team-name">Yingdong Feng</h3>
+            <p class="team-role">Backend Developer</p>
+            <p class="team-email">yingdong@email.sc.edu</p>
+            <div class="team-social">
+              <a href="#" class="social-link">
+                <i class="lucide lucide-github"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="lucide lucide-linkedin"></i>
+              </a>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">
+              <img src="https://placehold.co/100x100/333333/FFFFFF/png" alt="Kiran Chhetri">
+            </div>
+            <h3 class="team-name">Kiran Chhetri</h3>
+            <p class="team-role">Frontend Developer</p>
+            <p class="team-email">chhetrik@email.sc.edu</p>
+            <div class="team-social">
+              <a href="#" class="social-link">
+                <i class="lucide lucide-github"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="lucide lucide-linkedin"></i>
+              </a>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">
+              <img src="https://placehold.co/100x100/333333/FFFFFF/png" alt="Andrew Dhillon">
+            </div>
+            <h3 class="team-name">Andrew Dhillon</h3>
+            <p class="team-role">AI Specialist</p>
+            <p class="team-email">dhillons@email.sc.edu</p>
+            <div class="team-social">
+              <a href="#" class="social-link">
+                <i class="lucide lucide-github"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="lucide lucide-linkedin"></i>
+              </a>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">
+              <img src="https://placehold.co/100x100/333333/FFFFFF/png" alt="Logan Munn">
+            </div>
+            <h3 class="team-name">Logan Munn</h3>
+            <p class="team-role">UX Designer</p>
+            <p class="team-email">ljmunn@email.sc.edu</p>
+            <div class="team-social">
+              <a href="#" class="social-link">
+                <i class="lucide lucide-github"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="lucide lucide-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="section-title gradient-text" data-i18n="ctaTitle">Ready to Transform Your Nutrition?</h2>
+        <p class="section-subtitle" data-i18n="ctaSubtitle">Download our app today and start making smarter food choices.</p>
+        <button class="btn btn-primary" id="downloadBtnCta" data-i18n="downloadApp">Download App</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-title gradient-text">InfiniteLoopers</h3>
+          <p class="footer-description">AI-powered nutritional search app for making informed dietary choices.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="learn-more.html" class="footer-link">About</a></li>
+            <li><a href="https://github.com/SCCapstone/InfiniteLoopers" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-info">
+            <li class="footer-info-item">Email: info@infiniteloopers.app</li>
+            <li class="footer-info-item">Phone: (123) 456-7890</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Follow Us</h4>
+          <div class="footer-social">
+            <a href="#" class="social-link">
+              <i class="lucide lucide-facebook"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="lucide lucide-twitter"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="lucide lucide-instagram"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="lucide lucide-youtube"></i>
+            </a>
+            <a href="https://github.com/SCCapstone/InfiniteLoopers" target="_blank" rel="noopener noreferrer" class="social-link">
+              <i class="lucide lucide-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright" data-i18n="copyright">© 2025 InfiniteLoopers. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Login</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm" class="login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Download Modal -->
+  <div class="modal" id="downloadModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" data-i18n="scanToDownload">Scan QR Code to Download</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="qr-container">
+          <div class="qr-code">
+            <img src="https://placehold.co/200x200/FFFFFF/000000/png" alt="QR Code">
+          </div>
+          <p class="qr-description">Scan this QR code with your mobile device to download the app</p>
+        </div>
+        
+        <div class="download-tabs">
+          <div class="tabs-header">
+            <button class="tab-btn active" data-tab="android">Android</button>
+            <button class="tab-btn" data-tab="ios">iOS</button>
+          </div>
+          <div class="tabs-content">
+            <div class="tab-pane active" id="android-tab">
+              <button class="btn btn-primary btn-full" data-i18n="downloadAndroid">
+                <i class="lucide lucide-download"></i>
+                Download for Android
+              </button>
+            </div>
+            <div class="tab-pane" id="ios-tab">
+              <button class="btn btn-primary btn-full" data-i18n="downloadIOS">
+                <i class="lucide lucide-download"></i>
+                Download for iOS
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn More - InfiniteLoopers Nutritional Search App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-icons@0.284.0/font/lucide.min.css">
+</head>
+<body class="dark">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">
+          <span class="gradient-text">InfiniteLoopers</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="desktop-nav">
+          <!-- Empty for learn more page -->
+        </div>
+
+        <div class="nav-actions">
+          <button class="btn-language">
+            <i class="lucide lucide-globe"></i>
+            <span class="language-indicator">EN</span>
+          </button>
+
+          <button class="btn btn-outline" id="loginBtn" data-i18n="login">Login</button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-btn">
+          <button class="btn-language-mobile">
+            <i class="lucide lucide-globe"></i>
+          </button>
+          <button class="menu-toggle">
+            <i class="lucide lucide-menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-content">
+        <button class="btn btn-outline" id="loginBtnMobile" data-i18n="login">Login</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="learn-more-page">
+    <section class="learn-more-section">
+      <div class="container">
+        <a href="index.html" class="back-link">
+          <i class="lucide lucide-arrow-left"></i>
+          <span data-i18n="backToHome">Back to Home</span>
+        </a>
+
+        <h1 class="page-title gradient-text" data-i18n="learnMoreTitle">Discover InfiniteLoopers</h1>
+
+        <div class="learn-more-grid">
+          <div class="learn-more-content">
+            <p class="learn-more-description" data-i18n="learnMoreDescription1">
+              InfiniteLoopers Nutritional Search App is an AI-powered mobile application that allows users to search for food items and receive comprehensive nutritional information instantly.
+            </p>
+            <p class="learn-more-description" data-i18n="learnMoreDescription2">
+              Using advanced image recognition and natural language processing, our app helps users make informed choices about their diet with just a few taps.
+            </p>
+            <a href="https://github.com/SCCapstone/InfiniteLoopers" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i class="lucide lucide-github"></i>
+              <span data-i18n="viewGitHub">View on GitHub</span>
+            </a>
+          </div>
+          <div class="learn-more-image">
+            <img src="https://placehold.co/400x400/333333/FFFFFF/png" alt="App Screenshot">
+          </div>
+        </div>
+
+        <div class="info-tabs">
+          <div class="tabs-header">
+            <button class="tab-btn active" data-tab="features" data-i18n="detailedFeatures">Features</button>
+            <button class="tab-btn" data-tab="technical" data-i18n="technicalInfo">Technical Info</button>
+            <button class="tab-btn" data-tab="team" data-i18n="aboutTeam">Team</button>
+          </div>
+          <div class="tabs-content">
+            <div class="tab-pane active" id="features-tab">
+              <h3 class="tab-title" data-i18n="detailedFeatures">Features</h3>
+              <ul class="feature-list">
+                <li data-i18n="feature1Detail">Advanced image recognition identifies food items from photos with high accuracy</li>
+                <li data-i18n="feature2Detail">Natural language processing understands complex food queries</li>
+                <li data-i18n="feature3Detail">Comprehensive nutritional database covering thousands of food items</li>
+                <li data-i18n="feature4Detail">Personalized recommendations based on your dietary preferences</li>
+              </ul>
+            </div>
+            <div class="tab-pane" id="technical-tab">
+              <h3 class="tab-title" data-i18n="technicalInfo">Technical Info</h3>
+              <div class="tech-info">
+                <p><strong data-i18n="techStack">Technology Stack</strong>: React Native, Expo, Node.js</p>
+                <p><strong data-i18n="aiModels">AI Models</strong>: <span data-i18n="aiModelsDetail">Custom-trained image recognition and NLP models</span></p>
+                <p><strong data-i18n="dataProcessing">Data Processing</strong>: <span data-i18n="dataProcessingDetail">Real-time data analysis with edge computing for fast results</span></p>
+                <p><strong data-i18n="apiIntegration">API Integration</strong>: <span data-i18n="apiIntegrationDetail">Integrated with comprehensive nutritional databases</span></p>
+              </div>
+            </div>
+            <div class="tab-pane" id="team-tab">
+              <h3 class="tab-title" data-i18n="aboutTeam">Team</h3>
+              <div class="team-info">
+                <p data-i18n="teamDescription">Our team consists of five passionate developers from the University of South Carolina who are dedicated to making nutritional information more accessible.</p>
+                <div class="team-grid-small">
+                  <div class="team-member">
+                    <h4>Kaidi Lyu</h4>
+                    <p>klyu@email.sc.edu</p>
+                  </div>
+                  <div class="team-member">
+                    <h4>Yingdong Feng</h4>
+                    <p>yingdong@email.sc.edu</p>
+                  </div>
+                  <div class="team-member">
+                    <h4>Kiran Chhetri</h4>
+                    <p>chhetrik@email.sc.edu</p>
+                  </div>
+                  <div class="team-member">
+                    <h4>Andrew Dhillon</h4>
+                    <p>dhillons@email.sc.edu</p>
+                  </div>
+                  <div class="team-member">
+                    <h4>Logan Munn</h4>
+                    <p>ljmunn@email.sc.edu</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-title gradient-text">InfiniteLoopers</h3>
+          <p class="footer-description">AI-powered nutritional search app for making informed dietary choices.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="learn-more.html" class="footer-link">About</a></li>
+            <li><a href="https://github.com/SCCapstone/InfiniteLoopers" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-info">
+            <li class="footer-info-item">Email: info@infiniteloopers.app</li>
+            <li class="footer-info-item">Phone: (123) 456-7890</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Follow Us</h4>
+          <div class="footer-social">
+            <a href="#" class="social-link">
+              <i class="lucide lucide-facebook"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="lucide lucide-twitter"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="lucide lucide-instagram"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="lucide lucide-youtube"></i>
+            </a>
+            <a href="https://github.com/SCCapstone/InfiniteLoopers" target="_blank" rel="noopener noreferrer" class="social-link">
+              <i class="lucide lucide-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright" data-i18n="copyright">© 2025 InfiniteLoopers. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Login</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm" class="login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
