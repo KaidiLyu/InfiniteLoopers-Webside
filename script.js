@@ -365,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
       learnMoreDescription1:
         "InfiniteLoopers营养搜索应用是一款AI驱动的移动应用，允许用户搜索食品项目并立即获取全面的营养信息。",
       learnMoreDescription2:
-        "通过先进的图像识别和自然语言处理技术，我们的应用帮助用户只需几次点击即可对饮食做出明智的选��。",
+        "通过先进的图像识别和自然语言处理技术，我们的应用帮助用户只需几次点击即可对饮食做出明智的选择。",
       viewGitHub: "在GitHub上查看",
       detailedFeatures: "功能详情",
       technicalInfo: "技术信息",
@@ -384,5 +384,229 @@ document.addEventListener("DOMContentLoaded", () => {
       teamDescription: "我们的团队由来自南卡罗来纳大学的五位充满热情的开发人员组成，他们致力于使营养信息更加易于获取。",
     },
   }
+  
+  // App Demo Functionality
+  document.addEventListener("DOMContentLoaded", () => {
+    // Food database with nutritional information
+    const foodDatabase = {
+      apple: {
+        name: "Apple",
+        serving: "1 medium (182g)",
+        calories: 95,
+        protein: 0.5,
+        carbs: 25,
+        fat: 0.3,
+        image: "https://placehold.co/60x60/FF6B6B/FFFFFF/png?text=🍎",
+        vitamins: [
+          { name: "Vitamin C", value: "14% DV" },
+          { name: "Potassium", value: "6% DV" },
+          { name: "Vitamin K", value: "5% DV" },
+          { name: "Vitamin B6", value: "4% DV" },
+          { name: "Manganese", value: "3% DV" },
+          { name: "Copper", value: "2% DV" }
+        ]
+      },
+      pizza: {
+        name: "Pizza",
+        serving: "1 slice (107g)",
+        calories: 285,
+        protein: 12,
+        carbs: 36,
+        fat: 10.4,
+        image: "https://placehold.co/60x60/FFA94D/FFFFFF/png?text=🍕",
+        vitamins: [
+          { name: "Calcium", value: "20% DV" },
+          { name: "Iron", value: "15% DV" },
+          { name: "Vitamin B1", value: "18% DV" },
+          { name: "Vitamin B2", value: "17% DV" },
+          { name: "Sodium", value: "25% DV" },
+          { name: "Phosphorus", value: "14% DV" }
+        ]
+      },
+      milk: {
+        name: "Milk",
+        serving: "1 cup (244g)",
+        calories: 122,
+        protein: 8.1,
+        carbs: 11.7,
+        fat: 4.8,
+        image: "https://placehold.co/60x60/74C0FC/FFFFFF/png?text=🥛",
+        vitamins: [
+          { name: "Calcium", value: "28% DV" },
+          { name: "Vitamin D", value: "24% DV" },
+          { name: "Vitamin B12", value: "18% DV" },
+          { name: "Phosphorus", value: "22% DV" },
+          { name: "Riboflavin", value: "26% DV" },
+          { name: "Potassium", value: "10% DV" }
+        ]
+      },
+      banana: {
+        name: "Banana",
+        serving: "1 medium (118g)",
+        calories: 105,
+        protein: 1.3,
+        carbs: 27,
+        fat: 0.4,
+        image: "https://placehold.co/60x60/FFD43B/FFFFFF/png?text=🍌",
+        vitamins: [
+          { name: "Vitamin B6", value: "22% DV" },
+          { name: "Vitamin C", value: "17% DV" },
+          { name: "Potassium", value: "12% DV" },
+          { name: "Manganese", value: "16% DV" },
+          { name: "Magnesium", value: "8% DV" },
+          { name: "Folate", value: "6% DV" }
+        ]
+      },
+      chicken: {
+        name: "Chicken Breast",
+        serving: "100g (cooked)",
+        calories: 165,
+        protein: 31,
+        carbs: 0,
+        fat: 3.6,
+        image: "https://placehold.co/60x60/F8F9FA/000000/png?text=🍗",
+        vitamins: [
+          { name: "Vitamin B6", value: "30% DV" },
+          { name: "Niacin", value: "60% DV" },
+          { name: "Phosphorus", value: "20% DV" },
+          { name: "Selenium", value: "36% DV" },
+          { name: "Vitamin B12", value: "10% DV" },
+          { name: "Zinc", value: "7% DV" }
+        ]
+      },
+      rice: {
+        name: "White Rice",
+        serving: "1 cup (158g)",
+        calories: 205,
+        protein: 4.3,
+        carbs: 45,
+        fat: 0.4,
+        image: "https://placehold.co/60x60/F8F9FA/000000/png?text=🍚",
+        vitamins: [
+          { name: "Iron", value: "2% DV" },
+          { name: "Manganese", value: "19% DV" },
+          { name: "Folate", value: "9% DV" },
+          { name: "Thiamin", value: "12% DV" },
+          { name: "Selenium", value: "11% DV" },
+          { name: "Niacin", value: "6% DV" }
+        ]
+      }
+    };
+
+    // DOM elements
+    const searchInput = document.getElementById("food-search");
+    const searchBtn = document.getElementById("search-btn");
+    const suggestionPills = document.querySelectorAll(".suggestion-pill");
+    const resultCard = document.getElementById("result-card");
+    const resultPlaceholder = document.querySelector(".result-placeholder");
+    
+    // Result elements
+    const foodImage = document.getElementById("food-image");
+    const foodName = document.getElementById("food-name");
+    const foodServing = document.getElementById("food-serving");
+    const caloriesEl = document.getElementById("calories");
+    const proteinEl = document.getElementById("protein");
+    const carbsEl = document.getElementById("carbs");
+    const fatEl = document.getElementById("fat");
+    const proteinBar = document.getElementById("protein-bar");
+    const carbsBar = document.getElementById("carbs-bar");
+    const fatBar = document.getElementById("fat-bar");
+    const proteinPercent = document.getElementById("protein-percent");
+    const carbsPercent = document.getElementById("carbs-percent");
+    const fatPercent = document.getElementById("fat-percent");
+    const vitaminGrid = document.getElementById("vitamin-grid");
+
+    // Search functionality
+    function searchFood(query) {
+      query = query.toLowerCase().trim();
+      
+      // Check if food exists in database
+      if (foodDatabase[query]) {
+        displayFoodInfo(foodDatabase[query]);
+      } else {
+        // Check for partial matches
+        const keys = Object.keys(foodDatabase);
+        for (const key of keys) {
+          if (key.includes(query) || foodDatabase[key].name.toLowerCase().includes(query)) {
+            displayFoodInfo(foodDatabase[key]);
+            return;
+          }
+        }
+        
+        // No matches found
+        alert("Food not found. Try searching for apple, pizza, milk, banana, chicken, or rice.");
+      }
+    }
+
+    // Display food information
+    function displayFoodInfo(food) {
+      // Show result card, hide placeholder
+      resultCard.style.display = "block";
+      resultPlaceholder.style.display = "none";
+      
+      // Set food info
+      foodImage.style.backgroundImage = `url(${food.image})`;
+      foodName.textContent = food.name;
+      foodServing.textContent = `Serving size: ${food.serving}`;
+      
+      // Set nutrition summary
+      caloriesEl.textContent = food.calories;
+      proteinEl.textContent = `${food.protein}g`;
+      carbsEl.textContent = `${food.carbs}g`;
+      fatEl.textContent = `${food.fat}g`;
+      
+      // Calculate percentages for bars
+      const total = food.protein + food.carbs + food.fat;
+      const proteinPct = Math.round((food.protein / total) * 100);
+      const carbsPct = Math.round((food.carbs / total) * 100);
+      const fatPct = Math.round((food.fat / total) * 100);
+      
+      // Set bar widths and percentages
+      proteinBar.style.width = `${proteinPct}%`;
+      carbsBar.style.width = `${carbsPct}%`;
+      fatBar.style.width = `${fatPct}%`;
+      
+      proteinPercent.textContent = `${proteinPct}%`;
+      carbsPercent.textContent = `${carbsPct}%`;
+      fatPercent.textContent = `${fatPct}%`;
+      
+      // Set vitamins and minerals
+      vitaminGrid.innerHTML = "";
+      food.vitamins.forEach(vitamin => {
+        const vitaminItem = document.createElement("div");
+        vitaminItem.className = "vitamin-item";
+        vitaminItem.innerHTML = `
+          <span class="vitamin-name">${vitamin.name}</span>
+          <span class="vitamin-value">${vitamin.value}</span>
+        `;
+        vitaminGrid.appendChild(vitaminItem);
+      });
+    }
+
+    // Event listeners
+    if (searchBtn && searchInput) {
+      searchBtn.addEventListener("click", () => {
+        searchFood(searchInput.value);
+      });
+
+      searchInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          searchFood(searchInput.value);
+        }
+      });
+    }
+
+    if (suggestionPills) {
+      suggestionPills.forEach(pill => {
+        pill.addEventListener("click", () => {
+          const food = pill.getAttribute("data-food");
+          if (searchInput) {
+            searchInput.value = food;
+          }
+          searchFood(food);
+        });
+      });
+    }
+  })
   
   

@@ -1069,4 +1069,353 @@
     }
   }
   
+  /* App Demo Section */
+  .app-demo-section {
+    padding: 5rem 0;
+    background-color: black;
+  }
+  
+  .demo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  /* Phone Mockup */
+  .phone-mockup {
+    width: 300px;
+    height: 600px;
+    background-color: #111;
+    border-radius: 2rem;
+    border: 8px solid #333;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  
+  .phone-header {
+    height: 30px;
+    background-color: #000;
+    position: relative;
+  }
+  
+  .phone-notch {
+    position: absolute;
+    width: 120px;
+    height: 25px;
+    background-color: #000;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    z-index: 10;
+  }
+  
+  .phone-screen {
+    height: calc(100% - 60px);
+    background-color: #000;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .phone-home-button {
+    height: 30px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .phone-home-button:after {
+    content: "";
+    width: 40%;
+    height: 4px;
+    background-color: #333;
+    border-radius: 4px;
+  }
+  
+  /* App UI */
+  .app-header {
+    padding: 1rem;
+    background: linear-gradient(to right, var(--gray-900), black);
+    border-bottom: 1px solid var(--gray-800);
+  }
+  
+  .app-logo {
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .app-search {
+    padding: 1rem;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--gray-800);
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .search-bar i {
+    color: var(--gray-400);
+    margin-right: 0.5rem;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 0.875rem;
+    outline: none;
+  }
+  
+  .search-bar button {
+    background: linear-gradient(to right, var(--cyan-500), var(--emerald-500));
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .search-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .suggestion-pill {
+    background-color: var(--gray-800);
+    border: none;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .suggestion-pill:hover {
+    background-color: var(--gray-700);
+  }
+  
+  .app-results {
+    padding: 1rem;
+  }
+  
+  .result-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: var(--gray-500);
+    text-align: center;
+  }
+  
+  .result-placeholder i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .result-card {
+    background-color: var(--gray-900);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .result-header {
+    display: flex;
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray-800);
+  }
+  
+  .food-image {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius);
+    background-color: var(--gray-800);
+    margin-right: 1rem;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .food-info h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .food-info p {
+    font-size: 0.75rem;
+    color: var(--gray-400);
+  }
+  
+  .nutrition-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray-800);
+  }
+  
+  .nutrition-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .nutrition-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .nutrition-label {
+    font-size: 0.625rem;
+    color: var(--gray-400);
+  }
+  
+  .nutrition-details {
+    padding: 1rem;
+  }
+  
+  .nutrition-details h4 {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+    color: var(--gray-300);
+  }
+  
+  .nutrition-bar-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .nutrition-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bar-label {
+    width: 50px;
+    font-size: 0.75rem;
+    color: var(--gray-400);
+  }
+  
+  .bar-track {
+    flex: 1;
+    height: 8px;
+    background-color: var(--gray-800);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 0.5rem;
+  }
+  
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+  }
+  
+  .bar-fill:nth-child(1) {
+    background: linear-gradient(to right, var(--cyan-500), var(--cyan-700));
+  }
+  
+  #protein-bar {
+    background: linear-gradient(to right, var(--cyan-500), var(--cyan-700));
+  }
+  
+  #carbs-bar {
+    background: linear-gradient(to right, var(--emerald-500), var(--emerald-700));
+  }
+  
+  #fat-bar {
+    background: linear-gradient(to right, var(--blue-500), var(--blue-700));
+  }
+  
+  .bar-value {
+    width: 40px;
+    font-size: 0.75rem;
+    text-align: right;
+    color: var(--gray-300);
+  }
+  
+  .vitamins-minerals {
+    margin-top: 1rem;
+  }
+  
+  .vitamin-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .vitamin-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    padding: 0.25rem 0;
+  }
+  
+  .vitamin-name {
+    color: var(--gray-400);
+  }
+  
+  .vitamin-value {
+    color: var(--gray-300);
+  }
+  
+  .demo-info {
+    max-width: 500px;
+    padding: 1.5rem;
+    background-color: var(--gray-900);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-800);
+  }
+  
+  .demo-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--cyan-400);
+  }
+  
+  .demo-info p {
+    margin-bottom: 1rem;
+    color: var(--gray-300);
+  }
+  
+  .demo-info ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    color: var(--gray-300);
+  }
+  
+  .demo-info li {
+    margin-bottom: 0.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .demo-container {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    
+    .phone-mockup {
+      margin-right: 2rem;
+    }
+  }
+  
   

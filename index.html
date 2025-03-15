@@ -147,6 +147,129 @@
       </div>
     </section>
 
+    <!-- App Demo Section -->
+    <section class="app-demo-section" id="app-demo">
+      <div class="container">
+        <h2 class="section-title gradient-text">Try It Yourself</h2>
+        <p class="section-subtitle">See how our app works by searching for common foods</p>
+        
+        <div class="demo-container">
+          <div class="phone-mockup">
+            <div class="phone-header">
+              <div class="phone-notch"></div>
+            </div>
+            <div class="phone-screen">
+              <div class="app-header">
+                <div class="app-logo">
+                  <span class="gradient-text">InfiniteLoopers</span>
+                </div>
+              </div>
+              
+              <div class="app-search">
+                <div class="search-bar">
+                  <i class="lucide lucide-search"></i>
+                  <input type="text" id="food-search" placeholder="Search for a food...">
+                  <button id="search-btn">
+                    <i class="lucide lucide-arrow-right"></i>
+                  </button>
+                </div>
+                <div class="search-suggestions">
+                  <button class="suggestion-pill" data-food="apple">Apple</button>
+                  <button class="suggestion-pill" data-food="pizza">Pizza</button>
+                  <button class="suggestion-pill" data-food="milk">Milk</button>
+                  <button class="suggestion-pill" data-food="banana">Banana</button>
+                </div>
+              </div>
+              
+              <div class="app-results">
+                <div class="result-placeholder">
+                  <i class="lucide lucide-search"></i>
+                  <p>Search for a food to see nutrition information</p>
+                </div>
+                
+                <div class="result-card" id="result-card" style="display: none;">
+                  <div class="result-header">
+                    <div class="food-image" id="food-image">
+                      <!-- Food image will be set by JS -->
+                    </div>
+                    <div class="food-info">
+                      <h3 id="food-name">Food Name</h3>
+                      <p id="food-serving">Serving size: 100g</p>
+                    </div>
+                  </div>
+                  
+                  <div class="nutrition-summary">
+                    <div class="nutrition-item">
+                      <span class="nutrition-value" id="calories">0</span>
+                      <span class="nutrition-label">Calories</span>
+                    </div>
+                    <div class="nutrition-item">
+                      <span class="nutrition-value" id="protein">0g</span>
+                      <span class="nutrition-label">Protein</span>
+                    </div>
+                    <div class="nutrition-item">
+                      <span class="nutrition-value" id="carbs">0g</span>
+                      <span class="nutrition-label">Carbs</span>
+                    </div>
+                    <div class="nutrition-item">
+                      <span class="nutrition-value" id="fat">0g</span>
+                      <span class="nutrition-label">Fat</span>
+                    </div>
+                  </div>
+                  
+                  <div class="nutrition-details">
+                    <h4>Nutrition Details</h4>
+                    <div class="nutrition-bar-container">
+                      <div class="nutrition-bar">
+                        <div class="bar-label">Protein</div>
+                        <div class="bar-track">
+                          <div class="bar-fill" id="protein-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="bar-value" id="protein-percent">0%</div>
+                      </div>
+                      <div class="nutrition-bar">
+                        <div class="bar-label">Carbs</div>
+                        <div class="bar-track">
+                          <div class="bar-fill" id="carbs-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="bar-value" id="carbs-percent">0%</div>
+                      </div>
+                      <div class="nutrition-bar">
+                        <div class="bar-label">Fat</div>
+                        <div class="bar-track">
+                          <div class="bar-fill" id="fat-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="bar-value" id="fat-percent">0%</div>
+                      </div>
+                    </div>
+                    
+                    <div class="vitamins-minerals">
+                      <h4>Vitamins & Minerals</h4>
+                      <div class="vitamin-grid" id="vitamin-grid">
+                        <!-- Will be populated by JS -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="phone-home-button"></div>
+          </div>
+          
+          <div class="demo-info">
+            <h3>Interactive Demo</h3>
+            <p>Try searching for different foods to see their nutritional information. You can:</p>
+            <ul>
+              <li>Click on the suggestion pills</li>
+              <li>Type a food name and press enter</li>
+              <li>Try "apple", "pizza", "milk", "banana", "chicken", or "rice"</li>
+            </ul>
+            <p>This demo shows how our app instantly provides detailed nutritional information for any food you search.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- How It Works Section -->
     <section class="how-it-works" id="how-it-works">
       <div class="container">
