@@ -1069,20 +1069,6 @@
     }
   }
   
-  /* App Demo Section */
-  .app-demo-section {
-    padding: 5rem 0;
-    background-color: black;
-  }
-  
-  .demo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
   /* Phone Mockup */
   .phone-mockup {
     width: 300px;
