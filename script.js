@@ -1,14 +1,20 @@
+/**
+ * InfiniteLoopers - AI-Powered Nutritional Search App
+ * 主要JavaScript文件 - 处理网站的交互和功能
+ * Main JavaScript file - Handles website interactions and functionality
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Language Toggle
+    // 语言切换功能 - Language Toggle
     const btnLanguage = document.querySelector(".btn-language")
     const btnLanguageMobile = document.querySelector(".btn-language-mobile")
     const languageIndicator = document.querySelector(".language-indicator")
     let currentLanguage = localStorage.getItem("language") || "en"
   
-    // Set initial language
+    // 设置初始语言 - Set initial language
     setLanguage(currentLanguage)
   
-    // Language toggle event listeners
+    // 语言切换按钮事件监听器 - Language toggle event listeners
     if (btnLanguage) {
       btnLanguage.addEventListener("click", toggleLanguage)
     }
@@ -17,18 +23,27 @@ document.addEventListener("DOMContentLoaded", () => {
       btnLanguageMobile.addEventListener("click", toggleLanguage)
     }
   
+    /**
+     * 切换语言函数 - 在英文和中文之间切换
+     * Toggle language function - Switch between English and Chinese
+     */
     function toggleLanguage() {
       currentLanguage = currentLanguage === "en" ? "zh" : "en"
       localStorage.setItem("language", currentLanguage)
       setLanguage(currentLanguage)
     }
   
+    /**
+     * 设置语言函数 - 更新所有可翻译元素的文本
+     * Set language function - Updates text for all translatable elements
+     * @param {string} lang - 语言代码('en'或'zh') / Language code ('en' or 'zh')
+     */
     function setLanguage(lang) {
       if (languageIndicator) {
         languageIndicator.textContent = lang.toUpperCase()
       }
   
-      // Update all translatable elements
+      // 更新所有可翻译元素 - Update all translatable elements
       const elements = document.querySelectorAll("[data-i18n]")
       elements.forEach((el) => {
         const key = el.getAttribute("data-i18n")
@@ -38,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
   
-    // Mobile Menu Toggle
+    // 移动端菜单切换 - Mobile Menu Toggle
     const menuToggle = document.querySelector(".menu-toggle")
     const mobileMenu = document.querySelector(".mobile-menu")
   
@@ -46,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       menuToggle.addEventListener("click", () => {
         mobileMenu.classList.toggle("active")
   
-        // Toggle menu icon
+        // 切换菜单图标 - Toggle menu icon
         const icon = menuToggle.querySelector("i")
         if (icon) {
           if (mobileMenu.classList.contains("active")) {
@@ -60,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
   
-    // Smooth Scrolling
+    // 平滑滚动功能 - Smooth Scrolling
     const scrollLinks = document.querySelectorAll("[data-scroll-to]")
   
     scrollLinks.forEach((link) => {
@@ -70,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const targetElement = document.getElementById(targetId)
   
         if (targetElement) {
-          // Close mobile menu if open
+          // 如果移动菜单打开，则关闭 - Close mobile menu if open
           if (mobileMenu && mobileMenu.classList.contains("active")) {
             mobileMenu.classList.remove("active")
             const icon = menuToggle.querySelector("i")
@@ -80,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           }
   
-          // Scroll to target
+          // 滚动到目标位置 - Scroll to target
           const navbarHeight = document.querySelector(".navbar").offsetHeight
           const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight
   
@@ -92,14 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   
-    // Modal Functionality
+    // 模态框功能 - Modal Functionality
     const modals = document.querySelectorAll(".modal")
     const modalTriggers = {
       loginModal: [document.getElementById("loginBtn"), document.getElementById("loginBtnMobile")],
       downloadModal: [document.getElementById("downloadBtn"), document.getElementById("downloadBtnCta")],
     }
   
-    // Setup modal triggers
+    // 设置模态框触发器 - Setup modal triggers
     for (const [modalId, triggers] of Object.entries(modalTriggers)) {
       const modal = document.getElementById(modalId)
   
@@ -112,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         })
   
-        // Close modal with close button
+        // 通过关闭按钮关闭模态框 - Close modal with close button
         const closeBtn = modal.querySelector(".modal-close")
         if (closeBtn) {
           closeBtn.addEventListener("click", () => {
@@ -120,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
           })
         }
   
-        // Close modal when clicking outside
+        // 点击模态框外部关闭模态框 - Close modal when clicking outside
         modal.addEventListener("click", (e) => {
           if (e.target === modal) {
             modal.classList.remove("active")
@@ -129,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   
-    // Login Form Handling
+    // 登录表单处理 - Login Form Handling
     const loginForm = document.getElementById("loginForm")
     if (loginForm) {
       loginForm.addEventListener("submit", (e) => {
@@ -138,9 +153,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = document.getElementById("password").value
   
         console.log("Login attempt with:", email, password)
-        // Here you would typically send the data to a server
+        // 这里通常会将数据发送到服务器 - Here you would typically send the data to a server
   
-        // Close the modal after submission
+        // 提交后关闭模态框 - Close the modal after submission
         const modal = document.getElementById("loginModal")
         if (modal) {
           modal.classList.remove("active")
@@ -148,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
   
-    // Tab Functionality
+    // 标签页功能 - Tab Functionality
     const tabButtons = document.querySelectorAll(".tab-btn")
   
     tabButtons.forEach((button) => {
@@ -157,14 +172,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const tabContainer = this.closest(".download-tabs, .info-tabs")
   
         if (tabContainer) {
-          // Deactivate all tabs
+          // 停用所有标签页 - Deactivate all tabs
           const allTabs = tabContainer.querySelectorAll(".tab-pane")
           const allButtons = tabContainer.querySelectorAll(".tab-btn")
   
           allTabs.forEach((tab) => tab.classList.remove("active"))
           allButtons.forEach((btn) => btn.classList.remove("active"))
   
-          // Activate selected tab
+          // 激活选中的标签页 - Activate selected tab
           this.classList.add("active")
           const selectedTab = document.getElementById(`${tabId}-tab`)
           if (selectedTab) {
@@ -174,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   
-    // Video Player Functionality
+    // 视频播放器功能 - Video Player Functionality
     const videoElement = document.getElementById("demoVideo")
     const videoPlayBtn = document.querySelector(".video-play-btn")
     const videoOverlay = document.querySelector(".video-overlay")
@@ -182,6 +197,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (videoElement && videoPlayBtn && videoOverlay) {
       videoPlayBtn.addEventListener("click", toggleVideo)
   
+      /**
+       * 切换视频播放/暂停状态
+       * Toggle video play/pause state
+       */
       function toggleVideo() {
         if (videoElement.paused) {
           videoElement.play()
@@ -194,14 +213,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
   
-      // Auto-play video when scrolled into view
+      // 当滚动到视图中时自动播放视频 - Auto-play video when scrolled into view
       const videoSection = document.querySelector(".video-section")
       if (videoSection) {
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting && videoElement.paused) {
-                // Try to play video when it comes into view
+                // 当视频进入视图时尝试播放 - Try to play video when it comes into view
                 videoElement
                   .play()
                   .then(() => {
@@ -210,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   })
                   .catch((error) => {
                     console.error("Video play failed:", error)
-                    // Keep overlay visible if autoplay fails (common on mobile)
+                    // 如果自动播放失败(在移动设备上常见)，保持叠加层可见 - Keep overlay visible if autoplay fails (common on mobile)
                   })
               } else if (!entry.isIntersecting && !videoElement.paused) {
                 videoElement.pause()
@@ -227,7 +246,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
   
-  // Translations
+  /**
+   * 翻译内容 - 包含英文和中文两种语言的所有界面文本
+   * Translations - Contains all interface text in both English and Chinese
+   */
   const translations = {
     en: {
       // Navbar
@@ -307,19 +329,19 @@ document.addEventListener("DOMContentLoaded", () => {
       teamDescription: "Our team consists of five passionate developers from the University of South Carolina who are dedicated to making nutritional information more accessible.",
     },
     zh: {
-      // 导航栏
+      // 导航栏 (Navbar)
       features: "功能特点",
       howItWorks: "工作原理",
       team: "团队",
       login: "登录",
   
-      // 英雄区域
+      // 英雄区域 (Hero Section)
       heroTitle: "AI驱动的营养搜索",
       heroSubtitle: "通过照片或文字搜索，借助先进的AI技术，发现任何食物的营养成分。",
       downloadNow: "立即下载",
       learnMore: "了解更多",
   
-      // 功能区域
+      // 功能区域 (Features Section)
       featuresTitle: "核心功能",
       feature1Title: "图像识别",
       feature1Description: "拍摄任何食物的照片，获取即时营养信息。",
@@ -328,37 +350,37 @@ document.addEventListener("DOMContentLoaded", () => {
       feature3Title: "全面数据",
       feature3Description: "获取详细的营养分析，包括卡路里、宏量营养素、维生素等。",
   
-      // 工作原理区域
+      // 工作原理区域 (How it Works Section)
       howItWorksTitle: "工作原理",
       step1: "拍照或输入描述",
       step2: "AI分析内容",
       step3: "获取详细营养信息",
       step4: "做出明智的饮食选择",
   
-      // 团队区域
+      // 团队区域 (Team Section)
       teamTitle: "团队成员",
       teamDescription: "InfiniteLoopers背后的优秀团队",
   
-      // 行动召唤区域
+      // 行动召唤区域 (CTA Section)
       ctaTitle: "准备改变您的营养方式？",
       ctaSubtitle: "今天就下载我们的应用，开始做出更明智的食物选择。",
       downloadApp: "下载应用",
   
-      // 页脚
+      // 页脚 (Footer)
       copyright: "© 2025 InfiniteLoopers. 保留所有权利。",
   
-      // 视频区域
+      // 视频区域 (Video Section)
       videoTitle: "实际操作演示",
       videoSubtitle: "观看我们的应用实时工作",
   
-      // 二维码模态框
+      // 二维码模态框 (QR Code Modal)
       scanToDownload: "扫描二维码下载",
       downloadOptions: "下载选项",
       downloadAndroid: "下载安卓版",
       downloadIOS: "下载iOS版",
       closeModal: "关闭",
   
-      // 了解更多页面
+      // 了解更多页面 (Learn More Page)
       backToHome: "返回首页",
       learnMoreTitle: "探索 InfiniteLoopers",
       learnMoreDescription1:
